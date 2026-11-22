@@ -1,7 +1,9 @@
+.DS_Store
+*.bak
+
 # 编译产物
-out/
-*.class
-*.jar.new
+target/
+obj/
 
 # 运行与调试残留
 _dltest/
@@ -10,8 +12,6 @@ _diag_run.txt
 _args.txt
 *.log
 
-# 个人配置（首次运行自动生成）
+# 个人配置
+*.user
 config.json
-
-# 发布包拆解产物（classes 是 jar 里原样的 class，要入库）
-!unpacked/classes/**/*.class
