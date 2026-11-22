@@ -53,14 +53,14 @@ jobs:
       - name: 上传构建产物：xycLauncher-windows-x64
         uses: actions/upload-artifact@v7
         with:
-          name: xycLauncher-windows
+          name: xycLauncher-windows-x64
           path: ./platform/linux/windows/Release/net48/win-x64/publish
           retention-days: 7
 
       - name: 上传构建产物：xycLauncher-windows-x86
         uses: actions/upload-artifact@v7
         with:
-          name: xycLauncher-windows
+          name: xycLauncher-windows-x86
           path: ./platform/linux/windows/Release/net48/win-x86/publish
           retention-days: 7
 
