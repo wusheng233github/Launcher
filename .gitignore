@@ -12,7 +12,9 @@ _launch_log.txt
 _diag_run.txt
 _args.txt
 *.log
+dependency-reduced-pom.xml
 
 # 个人配置
 *.user
 config.json
+.idea/
