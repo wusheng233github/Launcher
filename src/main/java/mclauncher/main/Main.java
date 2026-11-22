@@ -25,7 +25,7 @@ public class Main {
         }
 
         installGlobalFont();
-        setDarkUI();
+        setDarkUI(); // 删掉这行即可打开亮色模式
 
         Path root = resolveRoot();
         Config cfg = Config.load(root);
@@ -112,6 +112,32 @@ public class Main {
         UIManager.put("CheckBoxMenuItem.background", card); UIManager.put("CheckBoxMenuItem.foreground", fg);
         UIManager.put("RadioButtonMenuItem.background", card); UIManager.put("RadioButtonMenuItem.foreground", fg);
         UIManager.put("PopupMenu.background", card); UIManager.put("PopupMenu.foreground", fg);
+
+        // 通用边框 / TitledBorder / 输入框边框
+        UIManager.put("TitledBorder.border", BorderFactory.createLineBorder(border));
+        UIManager.put("TitledBorder.titleColor", fg);
+        UIManager.put("TextField.border", BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(border),
+                BorderFactory.createEmptyBorder(2, 4, 2, 4)));
+        UIManager.put("PasswordField.border", UIManager.get("TextField.border"));
+        UIManager.put("FormattedTextField.border", UIManager.get("TextField.border"));
+        UIManager.put("FormattedTextField.caretForeground", caret);
+        UIManager.put("TextArea.border", BorderFactory.createLineBorder(border));
+        UIManager.put("ComboBox.border", BorderFactory.createLineBorder(border));
+        UIManager.put("ComboBox.buttonShadow", border);
+        UIManager.put("ComboBox.buttonDarkShadow", border);
+        UIManager.put("ComboBox.buttonHighlight", ctrl);
+        UIManager.put("Spinner.border", BorderFactory.createLineBorder(border));
+        UIManager.put("Spinner.arrowButtonBorder", BorderFactory.createLineBorder(border));
+        UIManager.put("ScrollPane.border", BorderFactory.createLineBorder(border));
+        UIManager.put("TabbedPane.border", BorderFactory.createLineBorder(border));
+        UIManager.put("MenuBar.border", BorderFactory.createLineBorder(border));
+        UIManager.put("PopupMenu.border", BorderFactory.createLineBorder(border));
+        UIManager.put("ToolTip.border", BorderFactory.createLineBorder(border));
+        UIManager.put("ProgressBar.border", BorderFactory.createLineBorder(border));
+        UIManager.put("TableHeader.cellBorder", BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(0, 0, 1, 0, border),
+                BorderFactory.createEmptyBorder(2, 4, 2, 4)));
     }
 
     private static void installGlobalFont() {
