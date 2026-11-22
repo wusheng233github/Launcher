@@ -4,6 +4,7 @@
 # 编译产物
 target/
 obj/
+bin/
 
 # 运行与调试残留
 _dltest/
